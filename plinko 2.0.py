@@ -7,12 +7,14 @@ ROWS = 16
 
 # Drop the ball and return multiplier
 def drop_ball():
-    position=len(SLOTS)//2  
+    slot_position = 0
+    for row in range(16):
+        # If random returns 1, go right
+        if random.randint(0, 1) == 1:
+            slot_position += 1
 
-    for i in range(ROWS):
-        position+=random.choice([-1, 1])
-
-    return SLOTS[position]
+    #see which slot it gets
+    return SLOTS[slot_position]
 
 
 # Print the board
@@ -78,3 +80,4 @@ You now have ${money:.2f}
             print("You're out of money!")
             break
 
+main()
