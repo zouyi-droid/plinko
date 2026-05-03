@@ -23,9 +23,13 @@ def board():
 
     rows=18 #Used for formatting the triangle shape
     for i in range(2, rows):
-        print("  " * (rows - i), end=" ") 
+        #Print leading spaces to center the triangle
+        print("  " * (rows - i), end=" ")
+
+        #Print dots representing pegs in each row
         for i in range(i + 1):
             print(" . ", end=" ")
+        #Move to next line after each row
         print()
         
     #Print slot multipliers at the bottom
